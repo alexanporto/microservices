@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: showcase-application
+#  cloud:
+#    config:
+#      uri: http://localhost:8887

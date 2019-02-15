@@ -1,0 +1,27 @@
+server:
+  port: 8880
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 8888  
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/  
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+    
+     
+app:
+  showcaseApplication:
+    serviceId: showcase-application
+    endpoint:
+      showcase: /api/showcase
+
+showcase-application:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 15000
